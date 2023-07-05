@@ -7,12 +7,13 @@ from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, Command
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 
 from launch.conditions import IfCondition, UnlessCondition
 
 
 def generate_launch_description():
-    robot_model = "warehouse_bot_sim.urdf"
+    robot_model = "warehouse_bot_sim.urdf.xacro"
     current_dir = get_package_share_directory("warehousebot_simulation")
     robot_model_path = os.path.join(current_dir, "urdf", robot_model)
 
@@ -22,6 +23,8 @@ def generate_launch_description():
 
     with open(robot_model_path, "r") as infp:
         robot_desc = infp.read()
+
+    robot_desc_urdf = ParameterValue(Command(["xacro ", robot_model_path]), value_type=str)
 
     declare_sim_time = DeclareLaunchArgument(
         "use_sim_time",
@@ -42,7 +45,9 @@ def generate_launch_description():
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
-        parameters=[{"use_sim_time": use_sim_time, "robot_description": robot_desc}],
+        parameters=[
+            {"use_sim_time": use_sim_time, "robot_description": robot_desc_urdf}
+        ],
     )
 
     joint_state_publisher_node = Node(
