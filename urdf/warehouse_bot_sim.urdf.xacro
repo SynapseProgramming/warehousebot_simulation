@@ -37,6 +37,21 @@
   </xacro:macro>
 
 
+  <xacro:caster name="caster_top_left">
+    <origin xyz="0.16 0.16 -0.035" rpy="0.0 0.0 0.0"/>
+  </xacro:caster>
+
+  <xacro:caster name="caster_bottom_left">
+    <origin xyz="-0.16 0.16 -0.035" rpy="0.0 0.0 0.0"/>
+  </xacro:caster>
+
+  <xacro:caster name="caster_bottom_right">
+    <origin xyz="-0.16 -0.16 -0.035" rpy="0.0 0.0 0.0"/>
+  </xacro:caster>
+
+  <xacro:caster name="caster_top_right">
+    <origin xyz="0.16 -0.16 -0.035" rpy="0.0 0.0 0.0"/>
+  </xacro:caster>
 
   <link name="base_laser">
     <visual>
@@ -109,8 +124,5 @@
     <origin xyz="0.169 0.0 0.035856" rpy="3.142 0.0 0.0"/>
   </joint>
 
-  <xacro:caster name="caster_top_left">
-    <origin xyz="0.18 0.18 -0.035" rpy="0.0 0.0 0.0"/>
-  </xacro:caster>
 
 </robot>
