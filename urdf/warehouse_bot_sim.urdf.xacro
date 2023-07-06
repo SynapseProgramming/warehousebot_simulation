@@ -3,7 +3,7 @@
   xmlns:xacro="http://ros.org/wiki/xacro">
 
 
-<xacro:include filename="$(find warehousebot_simulation)/urdf/warehouse_bot_sim.gazebo.xacro"/>
+  <xacro:include filename="$(find warehousebot_simulation)/urdf/warehouse_bot_sim.gazebo.xacro"/>
 
   <xacro:macro name="caster" params="name *origin">
     <link name="${name}_link">
@@ -72,6 +72,18 @@
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
+    <collision name="base_collision">
+      <geometry>
+        <mesh filename="package://warehousebot_simulation/meshes/left_wheel.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="0.00282485" ixy="-1.41127e-06" ixz="1.32139e-08" iyy="0.00283002" iyz="2.09836e-07" izz="0.00515906"/>
+    </inertial>
   </link>
 
   <link name="wheel_right_link">
@@ -81,6 +93,20 @@
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
+
+    <collision name="base_collision">
+      <geometry>
+        <mesh filename="package://warehousebot_simulation/meshes/right_wheel.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="0.00282485" ixy="-1.41127e-06" ixz="1.32139e-08" iyy="0.00283002" iyz="2.09836e-07" izz="0.00515906"/>
+    </inertial>
+
   </link>
 
 
@@ -96,6 +122,18 @@
       </material>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
+    <collision name="base_collision">
+      <geometry>
+        <mesh filename="package://warehousebot_simulation/meshes/bot_chassis.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+
+    <inertial>
+      <mass value="80"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="5.44729" ixy="0.00186274" ixz="0.901373" iyy="6.17857" iyz="-0.0011154" izz="3.76947"/>
+    </inertial>
   </link>
 
 
