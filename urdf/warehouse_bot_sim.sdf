@@ -1,0 +1,326 @@
+<sdf version='1.7'>
+  <model name='warehouse_bot'>
+    <link name='base_footprint'>
+      <inertial>
+        <pose>-0 0 0.049999 0 -0 0</pose>
+        <mass>550.012</mass>
+        <inertia>
+          <ixx>220.004</ixx>
+          <ixy>0</ixy>
+          <ixz>8.27918e-26</ixz>
+          <iyy>220.004</iyy>
+          <iyz>0</iyz>
+          <izz>220.005</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_footprint_fixed_joint_lump__base_collision_collision'>
+        <pose>0 0 0.05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://warehousebot_simulation/meshes/bot_chassis.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__caster_bottom_left_link_collision_1'>
+        <pose>-0.16 0.16 0.015 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.015</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__caster_bottom_right_link_collision_2'>
+        <pose>-0.16 -0.16 0.015 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.015</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__caster_top_left_link_collision_3'>
+        <pose>0.16 0.16 0.015 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.015</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__caster_top_right_link_collision_4'>
+        <pose>0.16 -0.16 0.015 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.015</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
+        <pose>0 0 0.05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://warehousebot_simulation/meshes/bot_chassis.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__caster_bottom_left_link_visual_1'>
+        <pose>-0.16 0.16 0.015 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.015</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/FlatBlack</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__caster_bottom_right_link_visual_2'>
+        <pose>-0.16 -0.16 0.015 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.015</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/FlatBlack</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__caster_top_left_link_visual_3'>
+        <pose>0.16 0.16 0.015 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.015</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/FlatBlack</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__caster_top_right_link_visual_4'>
+        <pose>0.16 -0.16 0.015 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.015</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/FlatBlack</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel_left_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0 0.159974 0.0985 1.57 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>wheel_left_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_left_link'>
+      <pose relative_to='wheel_left_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.00282485</ixx>
+          <ixy>-1.41127e-06</ixy>
+          <ixz>1.32139e-08</ixz>
+          <iyy>0.00283002</iyy>
+          <iyz>2.09836e-07</iyz>
+          <izz>0.00515906</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_left_link_fixed_joint_lump__base_collision_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://warehousebot_simulation/meshes/left_wheel.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='wheel_left_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://warehousebot_simulation/meshes/left_wheel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel_right_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0 -0.159974 0.0985 1.57 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>wheel_right_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_right_link'>
+      <pose relative_to='wheel_right_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.00282485</ixx>
+          <ixy>-1.41127e-06</ixy>
+          <ixz>1.32139e-08</ixz>
+          <iyy>0.00283002</iyy>
+          <iyz>2.09836e-07</iyz>
+          <izz>0.00515906</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_right_link_fixed_joint_lump__base_collision_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://warehousebot_simulation/meshes/right_wheel.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='wheel_right_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://warehousebot_simulation/meshes/right_wheel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <static>0</static>
+    <plugin name='bot_motor_controller' filename='libcub_diff_drive.so'>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometrySource>world</odometrySource>
+      <publishOdomTF>1</publishOdomTF>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+      <publishWheelTF>0</publishWheelTF>
+      <publishTf>1</publishTf>
+      <publishWheelJointState>1</publishWheelJointState>
+      <OdomAngularScaleCorrection>1.0</OdomAngularScaleCorrection>
+      <legacyMode>0</legacyMode>
+      <updateRate>100</updateRate>
+      <leftJoint>wheel_left_joint</leftJoint>
+      <rightJoint>wheel_right_joint</rightJoint>
+      <wheelSeparation>0.319948</wheelSeparation>
+      <wheelDiameter>0.197</wheelDiameter>
+      <wheelAcceleration>1.5</wheelAcceleration>
+      <wheelTorque>10</wheelTorque>
+      <rosDebugLevel>na</rosDebugLevel>
+    </plugin>
+  </model>
+</sdf>
