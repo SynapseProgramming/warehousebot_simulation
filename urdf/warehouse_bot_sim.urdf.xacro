@@ -3,6 +3,7 @@
   xmlns:xacro="http://ros.org/wiki/xacro">
 
 
+<xacro:include filename="$(find warehousebot_simulation)/urdf/warehouse_bot_sim.gazebo.xacro"/>
 
   <xacro:macro name="caster" params="name *origin">
     <link name="${name}_link">
