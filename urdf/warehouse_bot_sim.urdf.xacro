@@ -130,12 +130,11 @@
     </collision>
 
     <inertial>
-      <mass value="80"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="5.44729" ixy="0.00186274" ixz="0.901373" iyy="6.17857" iyz="-0.0011154" izz="3.76947"/>
+      <mass value="550"/>
+      <origin rpy="0 0 0" xyz="0 0 0 "/>
+      <inertia ixx="220" ixy="0" ixz="0" iyy="220" iyz="0" izz="220"/>
     </inertial>
   </link>
-
 
   <joint name="base_footprint_to_base_link" type="fixed">
     <parent link="base_footprint"/>
