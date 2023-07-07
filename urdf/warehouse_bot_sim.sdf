@@ -2,15 +2,15 @@
   <model name='warehouse_bot'>
     <link name='base_footprint'>
       <inertial>
-        <pose>2.5e-05 -0 0.049984 0 -0 0</pose>
+        <pose>0 -0 0.049984 0 -0 0</pose>
         <mass>20.015</mass>
         <inertia>
-          <ixx>0.325326</ixx>
-          <ixy>-1.3732e-24</ixy>
-          <ixz>-1.81869e-05</ixz>
-          <iyy>0.325411</iyy>
+          <ixx>0.324327</ixx>
+          <ixy>-1.46827e-40</ixy>
+          <ixz>-8.46214e-25</ixz>
+          <iyy>0.324327</iyy>
           <iyz>8.46214e-25</iyz>
-          <izz>0.3257</izz>
+          <izz>0.324616</izz>
         </inertia>
       </inertial>
       <collision name='base_footprint_fixed_joint_lump__base_collision_collision'>
@@ -212,7 +212,7 @@
           <scan>
             <horizontal>
               <samples>541</samples>
-              <resolution>0.005817</resolution>
+              <resolution>1</resolution>
               <min_angle>-1.57</min_angle>
               <max_angle>1.57</max_angle>
             </horizontal>

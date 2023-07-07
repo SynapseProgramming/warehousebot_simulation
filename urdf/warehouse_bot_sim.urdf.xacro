@@ -64,9 +64,9 @@
     </visual>
 
     <inertial>
-      <origin xyz="0 0 0"/>
+      <origin xyz="-0.169 0 0"/>
       <mass value="0.003"/>
-      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      <inertia ixx="0.0000012" ixy="0.0" ixz="0.0" iyy="0.0000012" iyz="0.0" izz="0.0000012"/>
     </inertial>
   </link>
 
