@@ -30,7 +30,7 @@ def generate_launch_description():
 
     declare_sim_time = DeclareLaunchArgument(
         "use_sim_time",
-        default_value="false",
+        default_value="true",
         description="Use simulation (Gazebo) clock if true",
     )
 
@@ -52,11 +52,6 @@ def generate_launch_description():
         ],
     )
 
-    joint_state_publisher_node = Node(
-        package="joint_state_publisher",
-        executable="joint_state_publisher",
-    )
-
     ld = LaunchDescription()
 
     launch_rviz2 = Node(
@@ -74,5 +69,4 @@ def generate_launch_description():
     ld.add_action(declare_rviz_config)
     ld.add_action(launch_rviz2)
     ld.add_action(robot_state_publisher_node)
-    ld.add_action(joint_state_publisher_node)
     return ld
