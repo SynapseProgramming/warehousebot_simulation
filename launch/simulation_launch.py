@@ -25,7 +25,7 @@ def generate_launch_description():
 
     declare_rviz_config = DeclareLaunchArgument(
         "rviz_config_dir",
-        default_value=os.path.join(current_dir, "rviz", "warehousebot_sim.rviz"),
+        default_value=os.path.join(current_dir, "rviz", "sim_nav.rviz"),
         description="default path to rviz config file",
     )
     world = os.path.join(
