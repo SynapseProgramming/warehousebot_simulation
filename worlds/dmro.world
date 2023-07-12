@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <sdf version="1.7">
   <world name="world">
     <scene>
@@ -14,12 +15,12 @@
       </camera>
       <plugin name="toggle_charging" filename="libtoggle_charging.so" />
       <plugin name="toggle_floors" filename="libtoggle_floors.so">
-        <floor name="DMRO MAP" model_name="dmro_map_DMRO MAP" />
+        <floor name="dmro_lab" model_name="dmro_lab" />
       </plugin>
     </gui>
     <include>
-      <name>dmro_map_DMRO MAP</name>
-      <uri>model://dmro_map_DMRO MAP</uri>
+      <name>dmro_lab</name>
+      <uri>model://warehousebot_simulation/meshes/dmro_lab</uri>
       <pose>0 0 0.0 0 0 0</pose>
     </include>
     <rmf_charger_waypoints name="charger_waypoints" />
