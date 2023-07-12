@@ -74,5 +74,25 @@
       </collision>
       <pose>4.447497201557217 -23.70897010209472 0 0 0 0</pose>
     </link>
+    <link name="dock">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://warehousebot_simulation/meshes/Dock.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision1">
+        <geometry>
+          <mesh>
+            <uri>model://warehousebot_simulation/meshes/Dock.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <pose>10.659 -8.149 0 1.57 0 3.142</pose>
+    </link>
+
   </model>
 </sdf>
