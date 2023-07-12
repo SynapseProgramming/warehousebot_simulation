@@ -387,7 +387,7 @@
       <wheel_separation>0.319948</wheel_separation>
       <wheel_diameter>0.197</wheel_diameter>
       <max_wheel_torque>20</max_wheel_torque>
-      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+      <max_wheel_acceleration>8.767</max_wheel_acceleration>
       <command_topic>cmd_vel</command_topic>
       <publish_odom>1</publish_odom>
       <publish_odom_tf>1</publish_odom_tf>
