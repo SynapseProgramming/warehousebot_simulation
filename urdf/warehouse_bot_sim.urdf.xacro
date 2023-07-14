@@ -4,6 +4,8 @@
 
 
   <xacro:include filename="$(find warehousebot_simulation)/urdf/warehouse_bot_sim.gazebo.xacro"/>
+  <xacro:include filename="$(find warehousebot_simulation)/urdf/_d435.urdf.xacro" />
+  <xacro:arg name="use_nominal_extrinsics" default="true"/>
 
   <xacro:macro name="caster" params="name *origin">
     <link name="${name}_link">
@@ -37,6 +39,9 @@
     </joint>
   </xacro:macro>
 
+  <xacro:sensor_d435 parent="base_link" use_nominal_extrinsics="$(arg use_nominal_extrinsics)">
+    <origin xyz="0.25 0 0.254" rpy="0 0 0"/>
+  </xacro:sensor_d435>
 
   <xacro:caster name="caster_top_left">
     <origin xyz="0.16 0.16 -0.035" rpy="0.0 0.0 0.0"/>
