@@ -12,6 +12,7 @@ aluminum peripherial evaluation case.
   xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- Includes -->
   <xacro:include filename="$(find warehousebot_simulation)/urdf/_materials.urdf.xacro" />
+  <xacro:include filename="$(find warehousebot_simulation)/urdf/_d435.gazebo.xacro"/>
 
   <xacro:macro name="sensor_d435" params="parent *origin name:=camera use_nominal_extrinsics:=false">
     <xacro:property name="M_PI" value="3.1415926535897931" />
@@ -41,6 +42,20 @@ aluminum peripherial evaluation case.
     <xacro:property name="d435_cam_depth_px" value="${d435_cam_mount_from_center_offset}"/>
     <xacro:property name="d435_cam_depth_py" value="0.0175"/>
     <xacro:property name="d435_cam_depth_pz" value="${d435_cam_height/2}"/>
+
+
+
+     <!-- Realsense Gazebo Plugin -->
+    <xacro:gazebo_d435
+      camera_name="${name}"
+      reference_link="${name}_link"
+      topics_ns="camera"
+      depth_optical_frame="${name}_depth_optical_frame"
+      color_optical_frame="${name}_color_optical_frame"
+      infrared1_optical_frame="${name}_left_ir_optical_frame"
+      infrared2_optical_frame="${name}_right_ir_optical_frame"
+      image_width="640"
+      image_height="480"/>
 
     <!-- camera body, with origin at bottom screw mount -->
     <joint name="${name}_joint" type="fixed">
