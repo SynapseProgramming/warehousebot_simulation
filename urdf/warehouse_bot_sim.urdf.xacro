@@ -40,7 +40,7 @@
   </xacro:macro>
 
   <xacro:sensor_d435 parent="base_link" use_nominal_extrinsics="$(arg use_nominal_extrinsics)">
-    <origin xyz="0.25 0 0.254" rpy="0 0 0"/>
+    <origin xyz="0.19065 0 0.254" rpy="0 0 0"/>
   </xacro:sensor_d435>
 
   <xacro:caster name="caster_top_left">
