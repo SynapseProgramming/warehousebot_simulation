@@ -10,8 +10,6 @@ from launch_ros.actions import Node
 def generate_launch_description():
     # Get the urdf file
     robot_model = "warehouse_bot_sim.sdf"
-    # robot_model = "supertest.sdf"
-    # robot_model = "model.sdf"
     current_dir = get_package_share_directory("warehousebot_simulation")
     robot_model_path = os.path.join(current_dir, "urdf", robot_model)
 

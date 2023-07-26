@@ -2,15 +2,15 @@
   <model name='warehouse_bot'>
     <link name='base_footprint'>
       <inertial>
-        <pose>2.5e-05 -0 0.049984 0 -0 0</pose>
+        <pose>0 -0 0.049984 0 -0 0</pose>
         <mass>20.015</mass>
         <inertia>
-          <ixx>0.325326</ixx>
-          <ixy>-1.3732e-24</ixy>
-          <ixz>-1.81869e-05</ixz>
-          <iyy>0.325411</iyy>
+          <ixx>0.324327</ixx>
+          <ixy>-1.46827e-40</ixy>
+          <ixz>-8.46214e-25</ixz>
+          <iyy>0.324327</iyy>
           <iyz>8.46214e-25</iyz>
-          <izz>0.3257</izz>
+          <izz>0.324616</izz>
         </inertia>
       </inertial>
       <collision name='base_footprint_fixed_joint_lump__base_collision_collision'>
@@ -148,7 +148,16 @@
           </script>
         </material>
       </visual>
-      <visual name='base_footprint_fixed_joint_lump__caster_bottom_left_link_visual_2'>
+      <visual name='base_footprint_fixed_joint_lump__camera_link_visual_2'>
+        <pose>0.20555 0 0.3165 1.5708 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://warehousebot_simulation/meshes/d435.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__caster_bottom_left_link_visual_3'>
         <pose>-0.16 0.16 0.015 0 -0 0</pose>
         <geometry>
           <sphere>
@@ -162,7 +171,7 @@
           </script>
         </material>
       </visual>
-      <visual name='base_footprint_fixed_joint_lump__caster_bottom_right_link_visual_3'>
+      <visual name='base_footprint_fixed_joint_lump__caster_bottom_right_link_visual_4'>
         <pose>-0.16 -0.16 0.015 0 -0 0</pose>
         <geometry>
           <sphere>
@@ -176,7 +185,7 @@
           </script>
         </material>
       </visual>
-      <visual name='base_footprint_fixed_joint_lump__caster_top_left_link_visual_4'>
+      <visual name='base_footprint_fixed_joint_lump__caster_top_left_link_visual_5'>
         <pose>0.16 0.16 0.015 0 -0 0</pose>
         <geometry>
           <sphere>
@@ -190,7 +199,7 @@
           </script>
         </material>
       </visual>
-      <visual name='base_footprint_fixed_joint_lump__caster_top_right_link_visual_5'>
+      <visual name='base_footprint_fixed_joint_lump__caster_top_right_link_visual_6'>
         <pose>0.16 -0.16 0.015 0 -0 0</pose>
         <geometry>
           <sphere>
@@ -212,7 +221,7 @@
           <scan>
             <horizontal>
               <samples>541</samples>
-              <resolution>0.005817</resolution>
+              <resolution>1</resolution>
               <min_angle>-1.57</min_angle>
               <max_angle>1.57</max_angle>
             </horizontal>
@@ -237,9 +246,108 @@
         </plugin>
         <pose>0.169 0 0.085856 -3.14119 -0 0</pose>
       </sensor>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+      <sensor name='cameraired1' type='camera'>
+        <camera name='camera'>
+          <horizontal_fov>1.48702</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>L_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.05</stddev>
+          </noise>
+        </camera>
+        <always_on>0</always_on>
+        <update_rate>10</update_rate>
+        <visualize>0</visualize>
+        <pose>0.20125 0.0175 0.3165 0 -0 0</pose>
+      </sensor>
+      <sensor name='cameraired2' type='camera'>
+        <camera name='camera'>
+          <horizontal_fov>1.48702</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>L_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.05</stddev>
+          </noise>
+        </camera>
+        <always_on>0</always_on>
+        <update_rate>10</update_rate>
+        <visualize>0</visualize>
+        <pose>0.20125 0.0175 0.3165 0 -0 0</pose>
+      </sensor>
+      <sensor name='cameradepth' type='depth'>
+        <camera name='camera'>
+          <horizontal_fov>1.48702</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.1</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>10</update_rate>
+        <visualize>0</visualize>
+        <pose>0.20125 0.0175 0.3165 0 -0 0</pose>
+      </sensor>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+      <sensor name='cameracolor' type='camera'>
+        <camera name='camera'>
+          <horizontal_fov>1.21126</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>RGB_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>10</update_rate>
+        <visualize>1</visualize>
+        <pose>0.20125 0.0325 0.3165 0 -0 0</pose>
+      </sensor>
     </link>
     <joint name='wheel_left_joint' type='revolute'>
-      <pose relative_to='base_footprint'>0 0.159974 0.0985 1.57 -0 0</pose>
+      <pose relative_to='base_footprint'>0 0.159974 0.0985 -1.57 0 0</pose>
       <parent>base_footprint</parent>
       <child>wheel_left_link</child>
       <axis>
@@ -310,7 +418,7 @@
       </visual>
     </link>
     <joint name='wheel_right_joint' type='revolute'>
-      <pose relative_to='base_footprint'>0 -0.159974 0.0985 1.57 -0 0</pose>
+      <pose relative_to='base_footprint'>0 -0.159974 0.0985 -1.57 0 0</pose>
       <parent>base_footprint</parent>
       <child>wheel_right_link</child>
       <axis>
@@ -387,7 +495,7 @@
       <wheel_separation>0.319948</wheel_separation>
       <wheel_diameter>0.197</wheel_diameter>
       <max_wheel_torque>20</max_wheel_torque>
-      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+      <max_wheel_acceleration>8.767</max_wheel_acceleration>
       <command_topic>cmd_vel</command_topic>
       <publish_odom>1</publish_odom>
       <publish_odom_tf>1</publish_odom_tf>
@@ -396,7 +504,6 @@
       <odometry_frame>odom</odometry_frame>
       <robot_base_frame>base_footprint</robot_base_frame>
     </plugin>
-    <static>0</static>
     <plugin name='warehousebot_joint_state' filename='libgazebo_ros_joint_state_publisher.so'>
       <ros>
         <remapping>~/out:=joint_states</remapping>
@@ -404,6 +511,31 @@
       <update_rate>100</update_rate>
       <joint_name>wheel_left_joint</joint_name>
       <joint_name>wheel_right_joint</joint_name>
+    </plugin>
+    <static>0</static>
+    <plugin name='camera' filename='librealsense_gazebo_plugin.so'>
+      <prefix>camera</prefix>
+      <depthUpdateRate>10.0</depthUpdateRate>
+      <colorUpdateRate>10.0</colorUpdateRate>
+      <infraredUpdateRate>10.0</infraredUpdateRate>
+      <depthTopicName>depth/image_raw</depthTopicName>
+      <depthCameraInfoTopicName>depth/camera_info</depthCameraInfoTopicName>
+      <colorTopicName>image_rgb</colorTopicName>
+      <colorCameraInfoTopicName>color_camera_info</colorCameraInfoTopicName>
+      <infrared1TopicName>infra1/image_raw</infrared1TopicName>
+      <infrared1CameraInfoTopicName>infra1/camera_info</infrared1CameraInfoTopicName>
+      <infrared2TopicName>infra2/image_raw</infrared2TopicName>
+      <infrared2CameraInfoTopicName>infra2/camera_info</infrared2CameraInfoTopicName>
+      <colorOpticalframeName>camera_color_optical_frame</colorOpticalframeName>
+      <depthOpticalframeName>camera_depth_optical_frame</depthOpticalframeName>
+      <infrared1OpticalframeName>camera_left_ir_optical_frame</infrared1OpticalframeName>
+      <infrared2OpticalframeName>camera_right_ir_optical_frame</infrared2OpticalframeName>
+      <rangeMinDepth>2.5</rangeMinDepth>
+      <rangeMaxDepth>1</rangeMaxDepth>
+      <pointCloud>1</pointCloud>
+      <pointCloudTopicName>/camera/depth/color/points</pointCloudTopicName>
+      <pointCloudCutoff>0.5</pointCloudCutoff>
+      <pointCloudCutoffMax>2.5</pointCloudCutoffMax>
     </plugin>
   </model>
 </sdf>

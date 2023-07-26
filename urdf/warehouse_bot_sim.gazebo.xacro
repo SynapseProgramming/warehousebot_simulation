@@ -8,7 +8,6 @@
   </gazebo>
 
   <!-- Wheel Properties -->
-  <!-- TODO: check out fdir1 properties  -->
   <gazebo reference="wheel_left_link">
     <mu1>2000</mu1>
     <mu2>2000</mu2>
@@ -83,7 +82,7 @@
         <scan>
           <horizontal>
             <samples>541</samples>
-            <resolution>0.005817</resolution>
+            <resolution>1</resolution>
             <min_angle>-1.57</min_angle>
             <max_angle>1.57</max_angle>
           </horizontal>
@@ -128,7 +127,7 @@
 
       <!-- limits -->
       <max_wheel_torque>20</max_wheel_torque>
-      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+      <max_wheel_acceleration>8.767</max_wheel_acceleration>
 
       <command_topic>cmd_vel</command_topic>
 
