@@ -9,6 +9,9 @@
 #include <sensor_msgs/msg/point_cloud2.hpp>
 #include <camera_info_manager/camera_info_manager.hpp>
 #include <image_transport/image_transport.hpp>
+#include <pcl/filters/voxel_grid.h>
+#include <pcl_conversions/pcl_conversions.h>
+#include <pcl/PCLPointCloud2.h>
 
 #include <memory>
 #include <string>
@@ -66,6 +69,9 @@ namespace gazebo
     std::unique_ptr<image_transport::ImageTransport> itnode_;
 
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pointcloud_pub_;
+
+    pcl::VoxelGrid<pcl::PCLPointCloud2> voxelfilter;
+    pcl::PCLPointCloud2 pclcloud;
 
   protected:
     image_transport::CameraPublisher color_pub_, ir1_pub_, ir2_pub_, depth_pub_;

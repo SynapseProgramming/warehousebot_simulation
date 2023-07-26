@@ -23,8 +23,12 @@ find_package(gazebo_ros REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(camera_info_manager REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(pcl_conversions REQUIRED)
+find_package(pcl_msgs REQUIRED)
 
 find_package(gazebo REQUIRED)
+find_package(PCL REQUIRED QUIET COMPONENTS common features filters io segmentation surface)
+
 
 set( dependencies
     rclcpp
@@ -32,6 +36,8 @@ set( dependencies
     image_transport
     camera_info_manager
     sensor_msgs
+    PCL
+    pcl_msgs
 )
 
 include_directories(
@@ -50,7 +56,7 @@ add_library(
 
 
 ament_target_dependencies(${PROJECT_NAME} ${dependencies})
-target_link_libraries(${PROJECT_NAME} ${GAZEBO_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${GAZEBO_LIBRARIES} ${PCL_LIBRARIES})
 
 install(TARGETS ${PROJECT_NAME} 
   ARCHIVE DESTINATION lib
