@@ -256,7 +256,7 @@
     i
     
   <gazebo>
-    <plugin filename="librealsense_gazebo_plugin.so" name="camera">
+    <plugin filename="libwarehousebot_simulation.so" name="camera">
       <prefix>camera</prefix>
       <depthUpdateRate>10.0</depthUpdateRate>
       <colorUpdateRate>10.0</colorUpdateRate>

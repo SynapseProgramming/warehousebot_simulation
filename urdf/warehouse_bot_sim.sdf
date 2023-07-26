@@ -513,7 +513,7 @@
       <joint_name>wheel_right_joint</joint_name>
     </plugin>
     <static>0</static>
-    <plugin name='camera' filename='librealsense_gazebo_plugin.so'>
+    <plugin name='camera' filename='libwarehousebot_simulation.so'>
       <prefix>camera</prefix>
       <depthUpdateRate>10.0</depthUpdateRate>
       <colorUpdateRate>10.0</colorUpdateRate>
