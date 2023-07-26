@@ -39,7 +39,7 @@
           </noise>
         </camera>
         <always_on>1</always_on>
-        <update_rate>30</update_rate>
+        <update_rate>10</update_rate>
         <visualize>1</visualize>
       </sensor>
 
@@ -76,7 +76,7 @@
           </noise>
         </camera>
         <always_on>0</always_on>
-        <update_rate>90</update_rate>
+        <update_rate>10</update_rate>
         <visualize>0</visualize>
       </sensor>
       <sensor name="${camera_name}ired2" type="camera">
@@ -98,7 +98,7 @@
           </noise>
         </camera>
         <always_on>0</always_on>
-        <update_rate>90</update_rate>
+        <update_rate>10</update_rate>
         <visualize>0</visualize>
       </sensor>
       <sensor name="${camera_name}depth" type="depth">
@@ -119,7 +119,7 @@
           </noise>
         </camera>
         <always_on>1</always_on>
-        <update_rate>90</update_rate>
+        <update_rate>10</update_rate>
         <visualize>0</visualize>
       </sensor>
     </gazebo>
@@ -127,9 +127,9 @@
     <gazebo>
       <plugin name="${topics_ns}" filename="librealsense_gazebo_plugin.so">
         <prefix>${camera_name}</prefix>
-        <depthUpdateRate>30.0</depthUpdateRate>
-        <colorUpdateRate>30.0</colorUpdateRate>
-        <infraredUpdateRate>30.0</infraredUpdateRate>
+        <depthUpdateRate>10.0</depthUpdateRate>
+        <colorUpdateRate>10.0</colorUpdateRate>
+        <infraredUpdateRate>10.0</infraredUpdateRate>
         <depthTopicName>depth/image_raw</depthTopicName>
         <depthCameraInfoTopicName>depth/camera_info</depthCameraInfoTopicName>
         <colorTopicName>image_rgb</colorTopicName>
