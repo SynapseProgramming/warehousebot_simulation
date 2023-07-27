@@ -345,6 +345,73 @@
         <visualize>1</visualize>
         <pose>0.20125 0.0325 0.3165 0 -0 0</pose>
       </sensor>
+      <sensor name='imu_sensor' type='imu'>
+        <plugin name='imu_plugin' filename='libgazebo_ros_imu_sensor.so'>
+          <ros>
+            <remapping>~/out:=imu/data</remapping>
+          </ros>
+          <initial_orientation_as_reference>0</initial_orientation_as_reference>
+        </plugin>
+        <always_on>1</always_on>
+        <update_rate>100</update_rate>
+        <visualize>1</visualize>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.0002</stddev>
+                <bias_mean>7.5e-06</bias_mean>
+                <bias_stddev>8e-07</bias_stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.0002</stddev>
+                <bias_mean>7.5e-06</bias_mean>
+                <bias_stddev>8e-07</bias_stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.0002</stddev>
+                <bias_mean>7.5e-06</bias_mean>
+                <bias_stddev>8e-07</bias_stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.017</stddev>
+                <bias_mean>0.1</bias_mean>
+                <bias_stddev>0.001</bias_stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.017</stddev>
+                <bias_mean>0.1</bias_mean>
+                <bias_stddev>0.001</bias_stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.017</stddev>
+                <bias_mean>0.1</bias_mean>
+                <bias_stddev>0.001</bias_stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+        <pose>0.18951 0.01198 0.3216 0 -0 0</pose>
+        <frameName>camera_imu_optical_frame</frameName>
+      </sensor>
     </link>
     <joint name='wheel_left_joint' type='revolute'>
       <pose relative_to='base_footprint'>0 0.159974 0.0985 -1.57 0 0</pose>
@@ -498,7 +565,7 @@
       <max_wheel_acceleration>8.767</max_wheel_acceleration>
       <command_topic>cmd_vel</command_topic>
       <publish_odom>1</publish_odom>
-      <publish_odom_tf>1</publish_odom_tf>
+      <publish_odom_tf>0</publish_odom_tf>
       <publish_wheel_tf>0</publish_wheel_tf>
       <odometry_topic>odom</odometry_topic>
       <odometry_frame>odom</odometry_frame>

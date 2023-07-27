@@ -82,6 +82,14 @@ aluminum peripherial evaluation case.
       </visual>
     </link>
 
+     <!-- frames for imu -->
+    <link name="${name}_imu_optical_frame" />
+    <joint name="${name}_imu_joint" type="fixed">
+      <origin xyz = "-0.01174 -0.00552 0.0051" rpy = "0 0 0" />
+      <parent link="${name}_link" />
+      <child link="${name}_imu_optical_frame" />
+    </joint>
+
     <!-- Use the nominal extrinsics between camera frames if the calibrated extrinsics aren't being published. e.g. running the device in simulation  -->
     <xacro:if value="${use_nominal_extrinsics}">
       <!-- camera depth joints and links -->
