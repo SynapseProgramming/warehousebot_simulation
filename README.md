@@ -13,6 +13,10 @@ A package for simulating the warehouse robot.
   ```
   sudo apt install ros-humble-turtlebot3-gazebo
   ```
+- install xacro
+  ```
+  sudo apt install ros-humble-xacro
+  ```
 - Add the following line to your bashrc file
   ```
   source /usr/share/gazebo/setup.sh
